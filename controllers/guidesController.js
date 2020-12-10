@@ -50,7 +50,7 @@ router.delete("/:id", async (req, res) => {
     where: { id: req.params.id },
   });
   res.json({
-    message: `Guide with id ${req.params.id} was deleted`,
+    message: `Guide with id ${req.params.id} was deleted.`,
   });
 });
 
