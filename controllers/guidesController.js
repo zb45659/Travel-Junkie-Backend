@@ -6,13 +6,13 @@ const GuideModel = require("../models").Guide;
 const ReviewModel = require("../models").Review;
 
 // CREATE A NEW Review FOR A Guide
-// router.post("/:id/newreview", async (req, res) => {
-//   let guide = await GuideModel.findByPk(req.params.id);
-//   let review = await guide.createReview(req.body);
-//   res.json({ guide, review });
-// });
+router.post("/:id/newreview", async (req, res) => {
+  let guide = await GuideModel.findByPk(req.params.id);
+  let review = await guide.createReview(req.body);
+  res.json({ guide, review });
+});
 
-// GET ARTIST PROFILE
+// GET Guide PROFILE
 router.get("/profile/:id", async (req, res) => {
   let guide = await GuideModel.findByPk(req.params.id, {
     include: UserModel,
@@ -20,7 +20,7 @@ router.get("/profile/:id", async (req, res) => {
   res.json({ guide });
 });
 
-// GET ALL ARTISTS
+// GET ALL GuideS
 router.get("/", async (req, res) => {
   let allGuides = await GuideModel.findAll({ include: ReviewModel });
   res.json({ allGuides });
@@ -44,7 +44,7 @@ router.put("/:id", async (req, res) => {
   res.json({ guide });
 });
 
-// DELETE A ARTIST
+// DELETE A Guide
 router.delete("/:id", async (req, res) => {
   await GuideModel.destroy({
     where: { id: req.params.id },
