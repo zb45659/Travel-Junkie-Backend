@@ -11,6 +11,12 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
+      lat: {
+        type: Sequelize.INTEGER
+      },
+      lng: {
+        type: Sequelize.INTEGER
+      },
       guideId: {
         type: Sequelize.INTEGER
       },

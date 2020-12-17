@@ -7,11 +7,6 @@ module.exports = {
       { name: "Shopping Spree" },
     ]);
 
-    let reviews = await queryInterface.bulkInsert("Reviews", [
-      { title: "This trip hit all the spots!", guideId: 1 },
-      { title: "I shopped till I dropped", guideId: 2 },
-    ]);
-
     let users = await queryInterface.bulkInsert("Users", [
       { name: "Zac Benckendorf" },
       { name: "Jensen Mink" },

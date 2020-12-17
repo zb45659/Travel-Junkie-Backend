@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Review.init({
     title: DataTypes.STRING,
+    lat: DataTypes.INTEGER,
+    lng: DataTypes.INTEGER,
     guideId: DataTypes.INTEGER
   }, {
     sequelize,
